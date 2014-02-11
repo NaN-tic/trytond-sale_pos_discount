@@ -1,7 +1,9 @@
 #!/usr/bin/env python
-# This file is part of the sale_pos_discount module for Tryton.
-# The COPYRIGHT file at the top level of this repository contains the full
-# copyright notices and license terms.
+# encoding: utf-8
+#This file is part sale_pos module for Tryton.
+#The COPYRIGHT file at the top level of this repository contains
+#the full copyright notices and license terms.
+
 from setuptools import setup
 import re
 import os
@@ -40,12 +42,11 @@ tests_require = ['proteus >= %s.%s, < %s.%s' %
 
 setup(name='%s_%s' % (PREFIX, MODULE),
     version=info.get('version', '0.0.1'),
-    description=('Tryton module to import CSV payments (Paypal, Sermepa...) '
-        'and confirm invoices and payments.'),
+    description='Tryton module for POS (Point of Sale) and discount',
+    long_description=read('README'),
     author='Zikzakmedia SL',
-    author_email='zikzak@zikzakmedia.com',
-    url='http://www.zikzakmedia.com',
-    download_url='https://bitbucket.org/zikzakmedia/trytond-' % MODULE,
+    url='http://www.zikzakmedia.com/',
+    download_url="https://bitbucket.org/zikzakmedia/trytond-%s" % MODULE,
     package_dir={'trytond.modules.%s' % MODULE: '.'},
     packages=[
         'trytond.modules.%s' % MODULE,
@@ -62,11 +63,18 @@ setup(name='%s_%s' % (PREFIX, MODULE),
         'Intended Audience :: Developers',
         'Intended Audience :: Financial and Insurance Industry',
         'Intended Audience :: Legal Industry',
-        'Intended Audience :: Manufacturing',
         'License :: OSI Approved :: GNU General Public License (GPL)',
+        'Natural Language :: Bulgarian',
         'Natural Language :: Catalan',
+        'Natural Language :: Czech',
+        'Natural Language :: Dutch',
+        'Natural Language :: English',
+        'Natural Language :: French',
+        'Natural Language :: German',
+        'Natural Language :: Russian',
         'Natural Language :: Spanish',
         'Operating System :: OS Independent',
+        'Programming Language :: Python :: 2.6',
         'Programming Language :: Python :: 2.7',
         'Topic :: Office/Business',
         ],
@@ -79,4 +87,5 @@ setup(name='%s_%s' % (PREFIX, MODULE),
     """ % (MODULE, MODULE),
     test_suite='tests',
     test_loader='trytond.test_loader:Loader',
-)
+    tests_require=tests_require,
+    )
