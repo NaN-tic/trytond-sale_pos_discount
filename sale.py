@@ -21,13 +21,3 @@ class SaleLine:
             cls.amount_w_tax.on_change_with.add('discount')
         if 'gross_unit_price' not in cls.amount_w_tax.on_change_with:
             cls.amount_w_tax.on_change_with.add('gross_unit_price')
-
-#     def update_prices(self):
-#         result = super(SaleLine, self).update_prices()
-#         result['unit_price_w_tax'] = super(SaleLine, self).get_price_with_tax(
-#             [self], ['unit_price_w_tax', 'amount_w_tax']
-#             )['unit_price_w_tax'][self.id]
-#         result['amount_w_tax'] = super(SaleLine, self).get_price_with_tax(
-#             [self], ['unit_price_w_tax', 'amount_w_tax']
-#             )['amount_w_tax'][self.id]
-#         return result
