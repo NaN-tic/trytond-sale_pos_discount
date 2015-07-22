@@ -4,11 +4,19 @@ The COPYRIGHT file at the top level of this repository contains the full
 copyright notices and license terms. -->
 <tryton>
     <data>
+        <!-- sale.line -->
         <record model="ir.ui.view" id="sale_line_view_tree">
             <field name="model">sale.line</field>
             <field name="inherit"
                 ref="sale_pos.sale_line_view_tree"/>
             <field name="name">sale_line_tree</field>
+        </record>
+
+        <!-- sale.sale -->
+        <record model="ir.ui.view" id="sale_pos_view_form">
+            <field name="model">sale.sale</field>
+            <field name="inherit" ref="sale_pos.sale_pos_view_form"/>
+            <field name="name">sale_pos_form</field>
         </record>
     </data>
 </tryton>
